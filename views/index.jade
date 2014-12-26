@@ -1,4 +1,106 @@
 extends includes/layout
 
 block content
-	p Here is some content
+	.container-fluid
+		.row
+			.col-md-3
+				accordion
+					.panel-group
+						.panel.panel-default
+							.panel-heading.clearfix
+								button.btn.btn-sm.pull-right Robot Configuration
+								h4.panel-title(style='margin-top:8px;') Robot
+							.panel-collapse.collapse.in(style="height: auto;")
+								.panel-body
+									.list-group(style="max-height: 100%; overflow-y: scroll")
+										//- ------------------------------------
+										a.list-group-item.active(style="font-weight: bold;")
+											i.fa.fa-gears(title='Subsystem')
+											| &nbsp;Drivetrain
+
+										a.list-group-item(style="font-weight: bold;")
+											| &nbsp; &nbsp; &nbsp;
+											i.fa.fa-gear(title='Command')
+											| &nbsp;Drive With Joystick
+
+										//- ------------------------------------
+										a.list-group-item(style="font-weight: bold;")
+											i.fa.fa-gears(title='Subsystem')
+											| &nbsp;Arm
+
+										a.list-group-item(style="font-weight: bold;")
+											| &nbsp; &nbsp; &nbsp;
+											i.fa.fa-gear(title='Command')
+											| &nbsp;Arm Toggle
+
+										a.list-group-item(style="font-weight: bold;")
+											| &nbsp; &nbsp; &nbsp;
+											i.fa.fa-gear(title='Command')
+											| &nbsp;Arm Roller Off
+
+										//- ------------------------------------
+										a.list-group-item(style="font-weight: bold;")
+											i.fa.fa-gears(title='Subsystem')
+											| &nbsp;Thrower
+
+										a.list-group-item(style="font-weight: bold;")
+											| &nbsp; &nbsp; &nbsp;
+											i.fa.fa-gear(title='Command')
+											| &nbsp;Throw Ball
+
+										a.list-group-item(style="font-weight: bold;")
+											| &nbsp; &nbsp; &nbsp;
+											i.fa.fa-gear(title='Command')
+											| &nbsp;Throw Ball Fast
+
+										a.list-group-item(style="font-weight: bold;")
+											| &nbsp; &nbsp; &nbsp;
+											i.fa.fa-gear(title='Command')
+											| &nbsp;Reset Thrower
+
+										//- ------------------------------------
+										a.list-group-item(style="font-weight: bold;")
+											i.fa.fa-gears(title='Misc.')
+											| &nbsp;Misc
+
+										a.list-group-item(style="font-weight: bold;")
+											| &nbsp; &nbsp; &nbsp;
+											i.fa.fa-gear(title='Command')
+											| &nbsp;Wait
+
+										a.list-group-item(style="font-weight: bold;")
+											| &nbsp; &nbsp; &nbsp;
+											i.fa.fa-gear(title='Command')
+											| &nbsp;Debug
+
+										a.list-group-item(style="font-weight: bold;")
+											| &nbsp; &nbsp; &nbsp;
+											i.fa.fa-gear(title='Command')
+											| &nbsp;Autonomous
+
+										a.list-group-item(style="font-weight: bold;")
+											| &nbsp; &nbsp; &nbsp;
+											i.fa.fa-gear(title='Command')
+											| &nbsp;Delayed Arm Down
+
+										a.list-group-item(style="font-weight: bold;")
+											| &nbsp; &nbsp; &nbsp;
+											i.fa.fa-gear(title='Command')
+											| &nbsp;Cheesy Auto
+
+										a.list-group-item(style="font-weight: bold;")
+											| &nbsp; &nbsp; &nbsp;
+											i.fa.fa-gear(title='Command')
+											| &nbsp;Wait for Cheesy
+
+										a.list-group-item(style="font-weight: bold;")
+											| &nbsp; &nbsp; &nbsp;
+											i.fa.fa-gear(title='Command')
+											| &nbsp;One Ball Auto
+
+									
+									//- .btn-group.btn-group-sm
+									//- 	button.btn.btn-default(type="button")
+									//- 		span.glyphicon.glyphicon-plus
+									//- 	button.btn.btn-default(type="button")
+									//- 		span.glyphicon.glyphicon-minus
