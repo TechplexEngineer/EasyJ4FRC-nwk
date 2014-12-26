@@ -1,6 +1,10 @@
 {
   "name": "xprs",
   "version": "0.0.1",
+  "scripts": {
+    "start": "nodemon start.js"
+  },
+  "author": "Blake Bourque",
   "private": true,
   "main": "index.html",
   "dependencies": {

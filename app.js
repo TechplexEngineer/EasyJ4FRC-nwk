@@ -25,9 +25,8 @@ module.exports = function bootstrap (callback) {
 	app.set('port', process.env.PORT || 3000);
 
 	var server = app.listen(app.get('port'), function() {
-		// log a message to console!
-		console.log("Express server listening on port %s", app.get('port'));
-		callback && callback();
+		// console.log("Express server listening on port %s", app.get('port'));
+		callback && callback(app.get('port'));
 	});
 
 	return app;
