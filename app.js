@@ -1,29 +1,34 @@
-var express = require('express'),
-  path = require('path'),
-  cookieParser = require('cookie-parser'),
-  bodyParser = require('body-parser');
 
-var routes = require('./routes');
+module.exports = function bootstrap (callback) {
 
-var app = express();
+	var express = require('express');
+	var path = require('path');
+	var cookieParser = require('cookie-parser');
+	var bodyParser = require('body-parser');
 
-// view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+	var routes = require('./routes');
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded());
-app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
-app.use(app.router);
+	var app = express();
 
-app.get('/', routes.index);
+	// view engine setup
+	app.set('views', path.join(__dirname, 'views'));
+	app.set('view engine', 'jade');
 
-app.set('port', process.env.PORT || 3000);
+	app.use(bodyParser.json());
+	app.use(bodyParser.urlencoded());
+	app.use(cookieParser());
+	app.use(express.static(path.join(__dirname, 'public')));
+	app.use(app.router);
 
-var server = app.listen(app.get('port'), function() {
-	// log a message to console!
-	console.log("Express server listening on port %s", app.get('port'));
-});
+	app.get('/', routes.index);
 
-module.exports = app;
+	app.set('port', process.env.PORT || 3000);
+
+	var server = app.listen(app.get('port'), function() {
+		// log a message to console!
+		console.log("Express server listening on port %s", app.get('port'));
+		callback && callback();
+	});
+
+	return app;
+}
